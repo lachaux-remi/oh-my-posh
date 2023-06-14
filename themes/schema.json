@@ -1,0 +1,146 @@
+{
+  "$schema": "https://raw.githubusercontent.com/lachaux-remi/oh-my-posh/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "session",
+          "background": "#29315A",
+          "foreground": "#E64747",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "template": "\uf007 {{ .UserName }}"
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "#29315A",
+          "foreground": "#3EC669",
+          "template": "\ue5ff {{ .Path }}",
+          "properties": {
+            "style": "agnoster_short",
+            "max_depth": 4
+          }
+        },
+        {
+          "type": "git",
+          "background": "#29315A",
+          "foreground": "#43CCEA",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "\ue725 {{ if regexFind \"INF-([0-9]+)\" .HEAD }}{{ regexFind \"INF-([0-9]+)\" .HEAD }}{{ else }}{{ .HEAD }}{{ end }}",
+          "properties": {
+            "branch_icon": "",
+            "branch_max_length": 50,
+            "truncate_symbol": "..."
+          }
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "php",
+          "background": "#29315A",
+          "foreground": "#a084ee",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "template": "PHP{{ if .Full }} {{ .Full }}{{ end }}"
+        },
+        {
+          "type": "node",
+          "background": "#29315A",
+          "foreground": "#42E66C",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "template": "\ue718{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ end }} {{ .Full }}",
+          "properties": {
+            "fetch_version": true
+          }
+        },
+        {
+          "type": "java",
+          "background": "#29315A",
+          "foreground": "#e11e23",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "template": "\udb82\udf37 {{ .Full }}"
+        },
+        {
+          "type": "docker",
+          "background": "#29315A",
+          "foreground": "#0095d1",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "template": " {{ .Context }} "
+        },
+        {
+          "type": "executiontime",
+          "background": "#29315A",
+          "foreground": "#AEA4BF",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "template": "\ue641 {{ .FormattedMs }}",
+          "properties": {
+            "style": "austin",
+            "threshold": 150,
+            "always_enabled": true
+          }
+        },
+        {
+          "type": "time",
+          "background": "#29315A",
+          "foreground": "#AEA4BF",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "{{ .CurrentDate | date .Format }}"
+        },
+        {
+          "type": "battery",
+          "foreground": "#3EC669",
+          "background": "#29315A",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "{{ if not .Error }}{{ if ne \"Full\" .State.String}} {{ .Percentage }}%{{ end }}{{ end }}",
+          "foreground_templates": [
+            "{{if eq \"Discharging\" .State.String}}#E64747{{end}}"
+          ]
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "foreground": "#43CCEA",
+          "template": " \u2514\u2500"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
