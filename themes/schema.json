@@ -3,10 +3,6 @@
   "blocks": [
     {
       "alignment": "left",
-      "newline": true
-    },
-    {
-      "alignment": "left",
       "newline": true,
       "segments": [
         {
