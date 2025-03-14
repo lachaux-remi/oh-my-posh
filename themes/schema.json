@@ -86,6 +86,15 @@
           "template": " {{ .Context }} "
         },
         {
+          "type": "kubectl",
+          "background": "#29315A",
+          "foreground": "#0095d1",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "template": " {{ .Context }} "
+        },
+        {
           "type": "executiontime",
           "background": "#29315A",
           "foreground": "#AEA4BF",
